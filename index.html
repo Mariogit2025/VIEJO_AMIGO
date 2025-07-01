@@ -1,0 +1,164 @@
+<!--Se define el tipo de documento (HTML5) -->
+<!DOCTYPE html>
+<!--Se define el idioma del contenido como español (lang="es").-->
+<html lang="es">
+
+<head>
+  <!--Soporte de caracteres especiales (tildes, ñ, etc.).  -->
+  <meta charset="UTF-8">
+  <!--Hace que el diseño sea responsive.-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Título que aparece en la pestaña del navegador.-->
+  <title>Viejo Amigo — One-Page UX/UI</title>
+  <!--Precarga una imagen para mejorar el rendimiento. Ref. Notas001.Doc-->
+  <link rel="preload" as="image" href="https://via.placeholder.com/1600x900" />
+  <!-- Conecta con el archivo de estilos style.css.-->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!--Permite a usuarios con teclado o lectores de pantalla saltar directamente al contenido.Ref. Notas001.Doc-->
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <header>
+    <!-- class="wrapper nav" son 2 clases css, define ancho maximo y centrado y ademas estiliza el área de navegación-->
+    <!-- aria-label="Principal" muy útil para personas que usan tecnologías asistida-->
+    <div class="contenedor nav" role="navigation" aria-label="Principal">
+      <!--class="logo" Clase para aplicar estilos al logo y nombre del sitio. -->
+      <!-- aria-label="Inicio" Proporciona una descripción accesible del enlace para usuarios con lector de pantalla.-->
+      <!-- Aqui indica que lleva al inicio de la pagina -->
+      <a href="#" class="logo" aria-label="Inicio">
+        <!--Esto define un ícono SVG su coordenadas se indican en los numero 0 0 24 24-->
+        <!-- aria-hidden oculta el svg para tecnologias asistidas-->
+        <!-- para la explicacion del icono Ref. Notas001.Doc-->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2L2 7l10 5 10-5-10-5zm0 13l8-4v7l-8 4-8-4v-7l8 4z" />
+        </svg>
+
+        Viejo Amigo
+      </a>
+      <nav>
+        <!--Menu de navegacion con boton para pantalla pequeñas-->
+        <button id="navToggle" aria-controls="Menuprincipal" aria-expanded="false" aria-label="Menú">☰</button>
+        <!-- listado de opciones que tendra el menu-->
+        <ul id="Menuprincipal">
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#about">Quiénes Somos</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#video">Video</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Escribenos</a></li>
+          <li><a href="#footer">Contactanos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div id="main">
+    <section id="hero" class="hero" role="banner">
+      <div class="hero-content wrapper">
+        <h1>Cuidamos a quienes más lo necesitan</h1>
+        <p>Ofrecemos un hogar cálido y seguro para adultos mayores.</p>
+        <a href="#quienes" class="btn">Descubre más</a>
+      </div>
+    </section>
+
+
+    <section id="quienes" class="quienes wrapper section" aria-labelledby="quienes|-cabeza">
+      <div class="quienes-grid">
+        <div>
+          <h2 id="quienes-cabeza" class="section-title">Quiénes somos</h2>
+          <p>Somos un equipo dedicado al bienestar físico y emocional de nuestros residentes.</p>
+          <p>Creemos en el respeto, la empatía y la atención personalizada.</p>
+        </div>
+        <div style="text-align: center;">
+          <img src="assets/equipo.jpg" alt="Equipo colaborando con nuestros ancianos" />
+        </div>
+
+      </div>
+
+
+    </section>
+
+    <section id="testimonios" class="testimonios section" aria-labelledby="testimonios-cabeza">
+      <div class="wrapper">
+        <h2 id="testimonios-cabeza" class="section-title">Testimonios de familiares</h2>
+        <div class="testimonios-grid">
+          <figure class="testimonio" aria-label="Testimonio de Graciela">
+            <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Ana López" />
+            <blockquote>“El cuidado que le dan a mi abuelo es de calidad....”</blockquote>
+            <figcaption>— Graciela Perez, Hija</figcaption>
+          </figure>
+          <figure class="testimonio" aria-label="Testimonio de Juan">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Juan Carlos L." />
+            <blockquote>“Vivo en el extranjero y encontre este centro de cuidados despues de haber contratado muchos”
+            </blockquote>
+            <figcaption>— Juan Carlos L. Nieto</figcaption>
+          </figure>
+          <figure class="testimonio" aria-label="Testimonio de Luisa">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Luisa Miranda" />
+            <blockquote>“Tuve que buscar quién cuidara a un familiar, que sufrio un accidente que vive solo.”
+            </blockquote>
+            <figcaption>— Luisa Miranda, Prima</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="video" class="section wrapper" aria-labelledby="video-heading">
+      <h2 id="video-heading" class="section-title">Conoce nuestro hogar</h2>
+      <div class="video-wrapper" role="region" aria-label="Video de presentación">
+        <iframe src="videos/large.mp4" title="Proceso UX/UI" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section id="galeria" class="section" aria-labelledby="gallery-heading">
+      <div class="wrapper">
+        <h2 id="gallery-heading" class="section-title">Galería de momentos</h2>
+        <div class="carousel" aria-label="Carrusel de imágenes">
+          <div class="carousel-track" id="carouselTrack">
+            <img src="https://picsum.photos/id/1015/1200/600" alt="Proyecto e-commerce" />
+            <img src="https://picsum.photos/id/1011/1200/600" alt="Proyecto dashboard" />
+            <img src="https://picsum.photos/id/1005/1200/600" alt="Proyecto salud" />
+          </div>
+          <button class="carousel-control prev" id="prevBtn" aria-label="Anterior">
+            << /button>
+              <button class="carousel-control next" id="nextBtn" aria-label="Siguiente">></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FORM SECTION ===================== -->
+    <section id="contacto" class="section wrapper" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" class="section-title">Contáctanos</h2>
+      <form class="contact-form" action="https://formspree.io/f/xpwdnrnr" method="POST">
+        <label>Nombre
+          <input type="text" name="name" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" required>
+        </label>
+        <label>Mensaje
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+      <!-- Reemplaza YOUR_FORM_ID con el ID proporcionado por Formspree -->
+    </section>
+    </main>
+
+    <footer id="footer" role="contentinfo">
+      <div class="wrapper footer-grid">
+        <div><strong>Viejo Amigo</strong><br />Cuidamos con cariño y dignidad.<br />Guatemala, 2025.</div>
+        <div><strong>Contacto</strong><br />contacto@viejoamigo.com<br />+502 1234-5678</div>
+        <div><strong>Síguenos</strong><br /><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">X</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
