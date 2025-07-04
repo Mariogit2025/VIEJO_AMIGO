@@ -1,5 +1,5 @@
 const navToggle = document.getElementById('navToggle');
-const primaryMenu = document.getElementById('primaryMenu');
+const primaryMenu = document.getElementById('Menuprincipal');
 navToggle.addEventListener('click', () => {
   const open = primaryMenu.classList.toggle('open');
   navToggle.setAttribute('aria-expanded', open);
